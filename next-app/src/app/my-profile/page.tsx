@@ -178,7 +178,7 @@ function ProfilePage() {
 
     const [isCenterOwner, setIsCenterOwner] = useState(false);
 
-    const [isValideTelegramId, setIsValideTelegramId] = useState(false);
+    const [isValideTelegramId, setIsValideTelegramId] = useState(true);
 
 
     useEffect(() => {
@@ -218,11 +218,6 @@ function ProfilePage() {
                     setIsCenterOwner(true);
                 }
             
-
-                if (data.result.telegramId) {
-                    setIsValideTelegramId(true);
-                }
-
 
 
             } else {
