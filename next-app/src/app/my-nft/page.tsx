@@ -598,7 +598,7 @@ function AgentPage() {
     const [agentDescription, setAgentDescription] = useState("");
 
 
-    const [agentImage, setAgentImage] = useState("https://owinwallet.com/logo-aiagent.png");
+    const [agentImage, setAgentImage] = useState("/icon-nft.png");
     const [ganeratingAgentImage, setGeneratingAgentImage] = useState(false);
 
 
