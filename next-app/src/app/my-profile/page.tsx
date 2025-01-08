@@ -890,12 +890,12 @@ function ProfilePage() {
                                     onClick={() => (window as any).Telegram.WebApp.openLink(`https://t.me/${telegramId}`)}
                                     className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
                                 >
-                                    텔레그램 ID: {telegramId}
+                                    매직아이디: {telegramId}
                                 </Button>
                                 <Button
                                     onClick={() => {
                                         navigator.clipboard.writeText(telegramId as string);
-                                        alert('텔레그램 ID가 복사되었습니다.');
+                                        alert('매직아이디가 복사되었습니다.');
                                     }}
                                     className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
                                 >
@@ -905,92 +905,10 @@ function ProfilePage() {
                             </div>
                         ) : (
                             <p className="text-sm text-zinc-400">
-                                텔레그램 ID가 없습니다.
+                                매직아이디가 없습니다.
                             </p>
                         )}
                     </div>
-
-
-
-                    {userCode && isValideTelegramId && (
-                        <div className='w-full flex flex-row gap-2 items-start justify-between border border-gray-300 p-4 rounded-lg'>
-                            <div className="bg-green-500 text-sm text-zinc-100 p-2 rounded">
-                                매직아이디(MID)
-                            </div>
-                            <div className='flex flex-row gap-2 items-center justify-between'>
-                                <div className="p-2 bg-zinc-800 rounded text-zinc-100 text-xl font-semibold">
-                                    {telegramId}
-                                </div>
-                            </div>
-                            {/* 복사 버튼 */}
-                            <button
-                                onClick={() => {
-                                    navigator.clipboard.writeText(telegramId as string);
-                                    alert('매직아이디가 복사되었습니다.');
-                                }}
-                                className="p-2 bg-blue-500 text-zinc-100 rounded"
-                            >
-                                복사
-                            </button>
-
-                            {isCenterOwner && (
-                                <span className='text-xs font-semibold text-green-500'>
-                                    센터 소유자 입니다.
-                                </span>
-                            )}
-                        </div>
-                    )}
-
-                    {userCode && !isValideTelegramId && (
-                        <div className='w-full flex flex-col gap-2 items-start justify-between border border-gray-300 p-4 rounded-lg'>
-                            <div className="flex flex-row gap-2 items-center justify-between">
-                                <span className='text-sm font-semibold text-gray-500'>
-                                    매직아이디(MID)
-                                </span>
-                                <span className='text-lg font-semibold text-blue-500'>
-                                    {telegramId}
-                                </span>
-                            </div>
-
-                            <button
-                                onClick={() => {
-                                    setUserTelegramId();
-                                }}
-                                disabled={loadingSetUserTelegramId}
-                                className={`
-                                    ${loadingSetUserTelegramId ? 'bg-gray-300 text-gray-400' : 'bg-blue-500 text-zinc-100'}
-                                    p-2 rounded-lg text-sm font-semibold
-                                    w-64 mt-5
-                                `}
-                            >
-                                {loadingSetUserTelegramId ? "텔레그램 ID 저장중..." : "텔레그램 ID 저장하기"}
-                            </button>
-    
-                        </div>
-                    )}
-
-
-
-                    {/* 회원아이디을 저장하면 나의 소속 센터 봇가 설정됩니다 */}
-                    {/*
-                    {address && !userCenter && (
-                        <div className='w-full flex flex-col gap-2 items-start justify-between border border-gray-300 p-4 rounded-lg'>
-                            <div className="bg-green-500 text-sm text-zinc-100 p-2 rounded">
-                                회원아이디을 저장하면 나의 소속 센터 봇이 설정됩니다
-                            </div>
-
-                            <div className="flex flex-row gap-2 items-center justify-between">
-                                <span className='text-sm font-semibold text-gray-500'>
-                                    나의 소속 센터 봇:
-                                </span>
-                                <span className='text-lg font-semibold text-blue-500'>
-                                    {center}
-                                </span>
-                            </div>
-
-                        </div>
-                    )}
-                    */}
 
                     
 
