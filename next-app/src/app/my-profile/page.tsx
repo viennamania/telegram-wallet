@@ -174,10 +174,6 @@ function ProfilePage() {
 
     const [erc721ContractAddress, setErc721ContractAddress] = useState("");
 
-    const [userCenter, setUserCenter] = useState("");
-
-    const [isCenterOwner, setIsCenterOwner] = useState(false);
-
     const [isValideTelegramId, setIsValideTelegramId] = useState(true);
 
 
@@ -211,12 +207,6 @@ function ProfilePage() {
 
                 ///setReferralCode(data.result.erc721ContractAddress);
                 setErc721ContractAddress(data.result.erc721ContractAddress);
-
-                setUserCenter(data.result.center);
-
-                if (data.result?.centerOwner) {
-                    setIsCenterOwner(true);
-                }
             
 
 
@@ -238,7 +228,6 @@ function ProfilePage() {
 
                 setErc721ContractAddress('');
 
-                setUserCenter('');
             }
 
         };
@@ -390,39 +379,6 @@ function ProfilePage() {
         setLoadingSetUserData(false);
 
         
-    }
-
-
-    // update User telegramId
-    const [loadingSetUserTelegramId, setLoadingSetUserTelegramId] = useState(false);
-    const setUserTelegramId = async () => {
-        
-        setLoadingSetUserTelegramId(true);
-
-        const response = await fetch("/api/user/updateUserTelegramId", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                walletAddress: address,
-                telegramId: telegramId,
-            }),
-        });
-
-        const data = await response.json();
-
-        //console.log("data", data);
-
-        if (data.result) {
-            setIsValideTelegramId(true);
-            //toast.success('Telegram ID saved');
-        } else {
-            //toast.error('Error saving Telegram ID');
-        }
-
-        setLoadingSetUserTelegramId(false);
-
     }
 
 
@@ -819,7 +775,7 @@ function ProfilePage() {
         <main
             className="p-4 pb-10 min-h-[100vh] flex items-start justify-center container max-w-screen-lg mx-auto"
             style={{
-                backgroundImage: "url('/mobile-background-profile.jpg')",
+                backgroundImage: "url('/mobile-background-profile.avif')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
