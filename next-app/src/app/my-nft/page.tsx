@@ -1415,11 +1415,11 @@ function AgentPage() {
                                                     
 
                                                     <Image
-                                                        src={nft.image.thumbnailUrl}
+                                                        src={nft.image.pngUrl}
                                                         alt="NFT"
-                                                        width={200}
-                                                        height={200}
-                                                        className="rounded-lg border border-gray-300"
+                                                        width={500}
+                                                        height={500}
+                                                        className="w-full rounded-lg border border-gray-300"
                                                         
                                                     />
 
