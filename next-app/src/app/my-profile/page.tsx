@@ -839,7 +839,7 @@ function ProfilePage() {
 
                     {/* telegram id */}
                     <div className="flex justify-center mt-5">
-                        {isValideTelegramId ? (
+                        {address && isValideTelegramId ? (
                             <div className="flex flex-row gap-2 items-center justify-between">
                                 
                                 <Button
