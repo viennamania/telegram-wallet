@@ -126,7 +126,7 @@ export default function Uploader(
 
 
 
-
+            {/*
             toast(
               (t: { id: string } 
                 ) => (
@@ -135,7 +135,7 @@ export default function Uploader(
                     <p className="text-sm text-gray-900 mt-5">
                       파일이 업로드되었습니다.
                     </p>
-                    {/*
+                    
                     <p className="mt-1 text-sm text-gray-500">
                       Your file has been uploaded to{' '}
                       <a
@@ -147,7 +147,7 @@ export default function Uploader(
                         {url}
                       </a>
                     </p>
-                    */}
+                    
 
                   </div>
                   <button
@@ -174,10 +174,16 @@ export default function Uploader(
               ),
               { duration: 3000 }
             )
+            */}
+
+            alert("파일이 업로드되었습니다.");
+
+
 
           } else {
             const error = await res.text()
-            toast.error(error)
+            //toast.error(error)
+            alert(error);
           }
           
           setSaving(false)
