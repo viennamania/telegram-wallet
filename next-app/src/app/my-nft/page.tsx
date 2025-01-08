@@ -598,7 +598,7 @@ function AgentPage() {
     const [agentDescription, setAgentDescription] = useState("");
 
 
-    const [agentImage, setAgentImage] = useState("/icon-nft.png");
+    const [agentImage, setAgentImage] = useState("");
     const [ganeratingAgentImage, setGeneratingAgentImage] = useState(false);
 
 
@@ -636,11 +636,6 @@ function AgentPage() {
             return;
         }
 
-        if (!agentImage) {
-            //toast.error('에이전트 이미지를 선택해주세요');
-            setMessageMintingAgentNft('NFT 이미지를 선택해주세요');
-            return;
-        }
 
 
         setMessageMintingAgentNft('NFT 발행중입니다');
@@ -770,7 +765,7 @@ function AgentPage() {
 
         setMintingAgentNft(false);
 
-        setAgentImage("https://owinwallet.com/logo-aiagent.png");
+        setAgentImage("");
 
     }
 
