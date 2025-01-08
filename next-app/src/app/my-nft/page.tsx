@@ -422,7 +422,7 @@ function AgentPage() {
         
         //if (confirm("Are you sure you want to deploy ERC721 contract?")) {
         // chinese confirm
-        if (confirm("AI 에이전트 계약주소를 생성하시겠습니까?")) {
+        if (confirm("NFT 계약주소를 생성하시겠습니까?")) {
 
             setLoadingDeployErc721Contract(true);
 
@@ -620,30 +620,30 @@ function AgentPage() {
 
         if (!erc721ContractAddress) {
             //toast.error('AI 에이전트 계약주소를 먼저 생성해주세요');
-            setMessageMintingAgentNft('AI 에이전트 계약주소를 먼저 생성해주세요');
+            setMessageMintingAgentNft('NFT 계약주소를 먼저 생성해주세요');
             return;
         }
 
         if (agentName.length < 5 || agentName.length > 15) {
             //toast.error('에이전트 이름은 5자 이상 15자 이하로 입력해주세요');
-            setMessageMintingAgentNft('에이전트 이름은 5자 이상 15자 이하로 입력해주세요');
+            setMessageMintingAgentNft('NFT 이름은 5자 이상 15자 이하로 입력해주세요');
             return;
         }
 
         if (agentDescription.length < 5 || agentDescription.length > 100) {
             //toast.error('에이전트 설명은 5자 이상 100자 이하로 입력해주세요');
-            setMessageMintingAgentNft('에이전트 설명은 5자 이상 100자 이하로 입력해주세요');
+            setMessageMintingAgentNft('NFT 설명은 5자 이상 100자 이하로 입력해주세요');
             return;
         }
 
         if (!agentImage) {
             //toast.error('에이전트 이미지를 선택해주세요');
-            setMessageMintingAgentNft('에이전트 이미지를 선택해주세요');
+            setMessageMintingAgentNft('NFT 이미지를 선택해주세요');
             return;
         }
 
 
-        setMessageMintingAgentNft('AI 에이전트 NFT 발행중입니다');
+        setMessageMintingAgentNft('NFT 발행중입니다');
 
 
         setMintingAgentNft(true);
@@ -654,7 +654,7 @@ function AgentPage() {
             setGeneratingAgentImage(true);
 
 
-            setMessageMintingAgentNft('AI 에이전트 이미지 생성중입니다');
+            setMessageMintingAgentNft('NFT 이미지 생성중입니다');
 
             // genrate image from api
             // /api/ai/generateImage
@@ -685,7 +685,7 @@ function AgentPage() {
             setAgentImage(imageUrl);
 
 
-            setMessageMintingAgentNft('AI 에이전트 NFT 발행중입니다');
+            setMessageMintingAgentNft('NFT 발행중입니다');
 
             const contract = getContract({
                 client,
@@ -725,10 +725,10 @@ function AgentPage() {
 
 
             if (!transactionResult) {
-                throw new Error('AI 에이전트 NFT 발행 실패. 관리자에게 문의해주세요');
+                throw new Error('NFT 발행 실패. 관리자에게 문의해주세요');
             }
 
-            setMessageMintingAgentNft('AI 에이전트 NFT 발행 완료');
+            setMessageMintingAgentNft('NFT 발행 완료');
 
 
             // fetch the NFTs again
@@ -765,7 +765,7 @@ function AgentPage() {
 
             ///toast.error('AI 에이전트 NFT 발행 실패');
 
-            setMessageMintingAgentNft('AI 에이전트 NFT 발행 실패');
+            setMessageMintingAgentNft('NFT 발행 실패');
         }
 
         setMintingAgentNft(false);
@@ -1220,7 +1220,7 @@ function AgentPage() {
                                 <div className='flex flex-col xl:flex-row gap-2 items-start justify-between'>
                                     <input 
                                         className="p-2 w-64 text-zinc-100 bg-zinc-800 rounded text-lg font-semibold"
-                                        placeholder="에이전트 이름"
+                                        placeholder="NFT 이름"
                                         type='text'
                                         onChange={(e) => {
                                             setAgentName(e.target.value);
@@ -1229,7 +1229,7 @@ function AgentPage() {
                                     />
                                     <input 
                                         className="p-2 w-64 text-zinc-100 bg-zinc-800 rounded text-lg font-semibold"
-                                        placeholder="에이전트 설명"
+                                        placeholder="NFT 설명"
                                         type='text'
                                         onChange={(e) => {
                                             setAgentDescription(e.target.value);
@@ -1257,8 +1257,8 @@ function AgentPage() {
                                                 className='animate-spin'
                                             />
                                         )}
-                                        {mintingAgentNft && 'AI 에이전트 NFT 발행중...'}
-                                        {!mintingAgentNft && 'AI 에이전트 NFT 발행하기'}
+                                        {mintingAgentNft && 'NFT 발행중...'}
+                                        {!mintingAgentNft && 'NFT 발행하기'}
                                     </div>
                                 </button>
 
@@ -1287,7 +1287,7 @@ function AgentPage() {
                                 {agentImage && (
                                     <Image
                                         src={agentImage}
-                                        alt="AI Agent"
+                                        alt="NFT"
                                         width={200}
                                         height={200}
                                         className="rounded-lg"
