@@ -75,7 +75,7 @@ function ProfilePage() {
 
     const searchParams = useSearchParams();
 
-    const center = searchParams.get("center");
+    ///const center = searchParams.get("center");
     const telegramId = searchParams.get("telegramId");
 
 
@@ -97,7 +97,7 @@ function ProfilePage() {
   
   
     // test address
-    //const address = "0x542197103Ca1398db86026Be0a85bc8DcE83e440";
+    ///const address = "0x5A56d059c84C544efa2e55FE1Ceae4b04c28016C";
   
 
 
@@ -232,10 +232,10 @@ function ProfilePage() {
 
         };
 
-        address && center &&
+        address &&
         fetchData();
 
-    }, [address, center]);
+    }, [address]);
     
 
 
@@ -254,7 +254,7 @@ function ProfilePage() {
             },
             body: JSON.stringify({
                 nickname: nickname,
-                center: center,
+                center: "",
             }),
         });
 
@@ -352,7 +352,7 @@ function ProfilePage() {
                     userType: "",
                     mobile: "",
                     telegramId: telegramId,
-                    center: center,
+                    center: "",
                 }),
             });
 
@@ -462,7 +462,7 @@ function ProfilePage() {
                     body: JSON.stringify({
                         walletAddress: address,
                         erc721ContractAddress: erc721ContractAddress,
-                        center: center,
+                        center: "",
                     }),
                 });
 

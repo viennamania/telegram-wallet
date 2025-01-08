@@ -73,7 +73,7 @@ function AgentPage() {
 
     const searchParams = useSearchParams();
 
-    const center = searchParams.get('center');
+    //const center = searchParams.get('center');
 
     /*
     const [params, setParams] = useState({ center: '' });
@@ -200,7 +200,6 @@ function AgentPage() {
                 },
                 body: JSON.stringify({
                     walletAddress: address,
-                    center: center,
                 }),
             });
 
@@ -248,10 +247,10 @@ function AgentPage() {
 
         };
 
-        address && center &&
+        address &&
         fetchData();
 
-    }, [address, center]);
+    }, [address]);
     
 
 
@@ -474,7 +473,7 @@ function AgentPage() {
                     body: JSON.stringify({
                         walletAddress: address,
                         erc721ContractAddress: erc721ContractAddress,
-                        center: center,
+                        center: "",
                     }),
                 });
 
