@@ -886,6 +886,35 @@ function ProfilePage() {
                         )}      
                     </div>
 
+                    {/* telegram id */}
+                    <div className="flex justify-center mt-5">
+                        {isValideTelegramId ? (
+                            <div className="flex flex-row gap-2 items-center justify-between">
+                                
+                                <Button
+                                    onClick={() => (window as any).Telegram.WebApp.openLink(`https://t.me/${telegramId}`)}
+                                    className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
+                                >
+                                    텔레그램 ID: {telegramId}
+                                </Button>
+                                <Button
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(telegramId as string);
+                                        alert('텔레그램 ID가 복사되었습니다.');
+                                    }}
+                                    className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
+                                >
+                                    복사
+                                </Button>
+                                
+                            </div>
+                        ) : (
+                            <p className="text-sm text-zinc-400">
+                                텔레그램 ID가 없습니다.
+                            </p>
+                        )}
+                    </div>
+
 
 
                     {userCode && isValideTelegramId && (
@@ -948,13 +977,13 @@ function ProfilePage() {
 
 
                     {/* 회원아이디을 저장하면 나의 소속 센터 봇가 설정됩니다 */}
+                    {/*
                     {address && !userCenter && (
                         <div className='w-full flex flex-col gap-2 items-start justify-between border border-gray-300 p-4 rounded-lg'>
                             <div className="bg-green-500 text-sm text-zinc-100 p-2 rounded">
                                 회원아이디을 저장하면 나의 소속 센터 봇이 설정됩니다
                             </div>
 
-                            {/* center */}
                             <div className="flex flex-row gap-2 items-center justify-between">
                                 <span className='text-sm font-semibold text-gray-500'>
                                     나의 소속 센터 봇:
@@ -966,6 +995,7 @@ function ProfilePage() {
 
                         </div>
                     )}
+                    */}
 
                     
 
