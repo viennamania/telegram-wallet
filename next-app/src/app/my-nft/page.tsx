@@ -103,10 +103,10 @@ function AgentPage() {
 
 
 
-    const address = account?.address;
+    //const address = account?.address;
   
     // test address
-    //const address = "0x542197103Ca1398db86026Be0a85bc8DcE83e440";
+    const address = "0x5A56d059c84C544efa2e55FE1Ceae4b04c28016C";
   
 
 
@@ -1016,7 +1016,7 @@ function AgentPage() {
 
                     {/* title */}
                     <div className="text-2xl font-semibold text-zinc-100">
-                        나의 AI 에이전트 NFT
+                        나의 NFT
                     </div>
                 </div>
         
@@ -1220,8 +1220,8 @@ function AgentPage() {
                                         className='animate-spin'
                                     />
                                 )}
-                                {address && loadingDeployErc721Contract && 'AI 에이전트 계약주소 생성중...'}
-                                {address && !erc721ContractAddress && !loadingDeployErc721Contract && 'AI 에이전트 계약주소 생성하기'}
+                                {address && loadingDeployErc721Contract && '계약주소 생성중...'}
+                                {address && !erc721ContractAddress && !loadingDeployErc721Contract && '계약주소 생성하기'}
  
                             </div>
 
@@ -1241,7 +1241,7 @@ function AgentPage() {
 
                             <div className='w-full flex flex-row gap-2 items-center justify-between'>
                                 <div className="bg-green-500 text-sm text-zinc-100 p-2 rounded">
-                                    AI 에이전트 계약주소
+                                    계약주소
                                 </div>
 
                                 <span className='text-xs xl:text-lg font-semibold'>
@@ -1292,7 +1292,7 @@ function AgentPage() {
                                 p-4 rounded-lg'>
                                 
                                 <span className="bg-green-500 text-sm text-zinc-100 p-2 rounded">
-                                    AI 에이전트 NFT 발행
+                                    NFT 발행
                                 </span>
 
                                 <div className='flex flex-col xl:flex-row gap-2 items-start justify-between'>
@@ -1357,7 +1357,7 @@ function AgentPage() {
                                             className='animate-spin'
                                         />
                                         <span className='text-xs font-semibold'>
-                                            AI 에이전트 이미지 생성중...
+                                            이미지 생성중...
                                         </span>
                                     </div>
                                 )}
@@ -1394,7 +1394,7 @@ function AgentPage() {
                                 {/* my NFTs */}
                                 <div className='mt-10 flex flex-row gap-2 items-start justify-between'>
                                     <span className="flex bg-green-500 text-sm text-zinc-100 p-2 rounded">
-                                        My AI 에이전트 NFT
+                                        나의 NFT
                                     </span>
 
                                     <div className='flex flex-row items-center justify-start gap-2'>
@@ -1444,9 +1444,9 @@ function AgentPage() {
                                             bg-yellow-100'
                                         >
 
+                                            {/*
                                             <div className='w-full flex flex-row gap-2 items-center justify-between'>
-                                                {/* goto button for detail page */}
-                                                
+  
                                                 <button
                                                     onClick={() => {
                                                         router.push('/agent/' + nft.contract.address + '/' + nft.tokenId);
@@ -1458,18 +1458,10 @@ function AgentPage() {
                                                         상세보기
                                                     </span>
                                                 </button>
-                                                
-                                                
 
-                                                {/* referral link button */}
                                                 <button
                                                     onClick={() => {
                                                         navigator.clipboard.writeText(
-                                                            /*
-                                                            referralUrl + '/?center=' + center +
-                                                            '&agent=' + nft.contract.address + 
-                                                            '&tokenId=' + nft.tokenId
-                                                            */
                                                             //'t.me/ppump_orry_bot?start=' + nft.contract.address + '_' + nft.tokenId
 
                                                             't.me/' + userCenter + '?start=' + nft.contract.address + '_' + nft.tokenId
@@ -1484,9 +1476,7 @@ function AgentPage() {
                                                 </button>
 
                                             </div>
-
-
-
+                                            */}
 
                                             <div className='w-full grid grid-cols-2 gap-2 items-center justify-between'>
 
@@ -1516,7 +1506,7 @@ function AgentPage() {
                                                         alt="NFT"
                                                         width={200}
                                                         height={200}
-                                                        className="rounded-lg w-32 xl:w-40 border border-gray-300"
+                                                        className="rounded-lg border border-gray-300"
                                                         
                                                     />
 
@@ -1549,7 +1539,7 @@ function AgentPage() {
                                                     <div className='text-xs font-semibold'>
                                                         계약주소: {nft.contract.address.substring(0, 6) + '...' + nft.contract.address.substring(nft.contract.address.length - 4)}
                                                     </div>
-                                                    <div className='text-2xl font-semibold text-blue-500'>
+                                                    <div className='text-lg font-semibold text-blue-500'>
                                                         계약번호: #{nft.tokenId}
                                                     </div>
                                                     <div className='text-sm font-semibold text-green-500'>
