@@ -262,7 +262,7 @@ function ProfilePage() {
         const data = await response?.json();
 
 
-        console.log("checkNicknameIsDuplicate data", data);
+        ///console.log("checkNicknameIsDuplicate data", data);
 
         if (data.result) {
             setIsNicknameDuplicate(true);
@@ -1021,23 +1021,6 @@ function ProfilePage() {
                             </div>
                         )}
 
-
-                        {userCode && (
-                            <div className='flex flex-row xl:flex-row gap-2 items-center justify-between border border-gray-300 p-4 rounded-lg'>
-
-                                <div className="bg-green-500 text-sm text-zinc-100 p-2 rounded">
-                                    프로필 이미지
-                                </div>
-
-                                <div className="p-2 bg-zinc-800 rounded text-zinc-100 text-xl font-semibold">
-                                    <Uploader
-                                        lang='kr'
-                                        walletAddress={address as string}
-                                    />
-                                </div>
-
-                            </div>
-                        )}
 
 
                     </div>
